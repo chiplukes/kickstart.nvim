@@ -231,6 +231,22 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
+  -- Firenvim (nvim in browser textboxes)
+  {
+    'glacambre/firenvim',
+    build = ":call firenvim#install(0)",
+    config = function()
+        vim.g.firenvim_config = {
+        -- config values, like in my case:
+        localSettings = {
+            [".*"] = {
+            takeover = "never",
+            },
+        },
+        }
+    end
+  },
+
   {
     'folke/flash.nvim',
     event = 'VeryLazy',
